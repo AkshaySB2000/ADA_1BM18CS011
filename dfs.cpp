@@ -13,7 +13,6 @@ void dfs(int v)
 		{
 			flag=1;
 			c++;
-			//cout<<i<<" ";
 			dfs(i);
 		}
 	}
@@ -25,7 +24,6 @@ void dfs(int v)
 			{
 				flag==1;
 				c++;
-				//cout<<j<<" ";
 				dfs(j);
 			}
 		}

@@ -1,49 +1,58 @@
 #include<algorithm>
 #include<iostream>
+#include<set>
 using namespace std;
-int G[10][10],visited[10];
-int flag=1;
-void DFS(int i,int n)
-{
-int j;
-visited[i]=1;
-for(j=0;j<n;j++)
-{
-if(visited[j]==1&&G[i][j]==1)
-{
-flag=0;
-break;
-}
-if(visited[j]==0&&G[i][j]==1)
-DFS(j,n);
-}
-}
-
-
-
-
+int arr[30][30];
+bool hasCycle(int n);
+bool dfs(int vertex, set<int>&visited, int parent,int n);
 int main()
 {
-    int i,j,n;
-    cout<<"Enter number of vertices\n";
-   
+	bool res;
+  	int n;
+   	cout<<"Enter the no of vertices"<<endl;
 	cin>>n;
- 
-    
-	cout<<"Enter adjacency matrix of the graph\n";
-   
-	for(i=0;i<n;i++)
-       for(j=0;j<n;j++)
-			cin>>G[i][j];
- 
-    
-   for(i=0;i<n;i++)
-        visited[i]=0;
- 
-    DFS(0,n);
-    if(flag==0)
-    cout<<"\nCycle exists";
-    else
-    cout<<"\nCycle doesnt exist";
-    return 0;
+	cout<<"Enter the adjacency matrix"<<endl;
+	for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<n;j++)
+			cin>>arr[i][j];
+	}
+   	res = hasCycle(n);
+   	if(res)
+      		cout<<"The graph has cycle"<<endl;
+   	else
+      		cout<<"The graph has no cycle"<<endl;
+    	return 0;
 }
+bool dfs(int vertex, set<int>&visited, int parent,int n) 
+{
+	visited.insert(vertex);
+  	for(int v = 0; v<n; v++) 
+	{
+        	if(arr[vertex][v]) 
+		{
+         		if(v == parent)    
+            			continue;
+         		if(visited.find(v) != visited.end())    
+            			return true;
+         		if(dfs(v, visited, vertex,n))
+            			return true;
+      		}
+   	}
+   	return false;
+}
+bool hasCycle(int n) 
+{
+	set<int>visited;       
+        for(int v = 0; v<n; v++) 
+	{
+      		if(visited.find(v) != visited.end())    
+         		continue;
+     		if(dfs(v, visited, -1,n))  
+		{
+         		return true;
+      		}
+  	}	
+   	return false;
+}
+

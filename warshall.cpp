@@ -4,7 +4,7 @@ using namespace std;
 void warshall(int n, int a[][20]);
 int main()
 { 
-	int a[20][20],q[20],visited[20],r=-1,f=0,i,j,n,v;  
+	int a[20][20],q[20],i,j,n;  
         cout<<"Enter the number of vertices\n"; 
         cin>>n; 
 	cout<<"Enter the adjacency matrix of the graph\n"; 

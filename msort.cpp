@@ -9,10 +9,11 @@ using namespace std;
 int main()
 {
 	srand(time(0));	
-	int a[20],n,i,low,high;
+	int n,i,low,high;
 	clock_t time;
 	cout<<"Enter the number of elements\n";
 	cin>>n;
+        int a[n];
 	cout<<"Enter the elements\n";
 	for(i=0;i<n;i++)
 	{
@@ -45,7 +46,7 @@ void mergesort(int low, int high, int a[])
 }
 void merge(int low, int mid, int high, int a[])
 {
-	int i,j,k,t[20];
+	int i,j,k,t[1000];
 	i = low;
 	j = mid+1;
 	k = low;

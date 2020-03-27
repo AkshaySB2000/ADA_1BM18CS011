@@ -30,7 +30,7 @@ void xormatrix(int n)
 			}
 		}
 	}
-	cout<<"\nThe matrix in which the bitwise XOR of each row and column is 0 is\n";
+	cout<<"\nThe matrix in which the bitwise XOR of each row and column is the same is\n";
 	for(i=0;i<n;i++)
 	{
 		for(j=0;j<n;j++)
@@ -44,7 +44,7 @@ void xormatrix(int n)
 Enter a number which is a multiple of 4
 8
 
-The matrix in which the bitwise XOR of each row and column is 0 is
+The matrix in which the bitwise XOR of each row and column is the same is
 0 1 2 3 16 17 18 19 
 4 5 6 7 20 21 22 23 
 8 9 10 11 24 25 26 27 

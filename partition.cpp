@@ -33,6 +33,7 @@ bool partition(int a[], int n)
 	{
 		for(j=1;j<=n;j++)
 		{
+			parttable[i][j] = parttable[i][j-1];
 			if(i>=a[j-1])
 				parttable[i][j] = parttable[i][j-1] || parttable[i-a[j-1]][j-1];
 		}

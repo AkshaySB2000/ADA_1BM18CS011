@@ -9,7 +9,7 @@ int main()
 	cin>>a;
 	if(a>0)
 	{
-		cout<<"\nFollowing are minimum number of coins exchanged for "<<a<<"\n";
+		cout<<"\nFollowing are the coins exchanged for "<<a<<"\n";
 		mincoins(a);
 	}
 	else
@@ -30,8 +30,11 @@ void mincoins(int a)
 			coins[c++] = deno[i];
 		}
 	}
+	
 	for(i=0;i<c;i++)
 		cout<<coins[i]<<" ";
+	cout<<"\n\nThe minimum number of coins are\n";
+	cout<<c;
 }
 
 /*Output:
@@ -39,6 +42,10 @@ void mincoins(int a)
 Enter the amount for which change is to be found
 3566
 
-Following are minimum number of coins exchanged for 3566
+Following are the coins exchanged for 3566
 2000 500 500 500 50 10 5 1 
+
+The minimum number of coins are
+8
 */
+

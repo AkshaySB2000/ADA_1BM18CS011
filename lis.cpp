@@ -12,7 +12,7 @@ int main()
 	cout<<"Enter the elements of the array\n";
 	for(i=0;i<n;i++)
 		cin>>a[i];
-	cout<<"\nThe length of the longest subsequence of the given sequence = "<<lis(a,n)<<endl;
+	cout<<"\nThe length of the longest increasing subsequence of the given sequence = "<<lis(a,n)<<endl;
 	return 0;
 }
 int lis(int a[], int n)  
@@ -36,5 +36,5 @@ Enter the size of the array
 Enter the elements of the array
 5 2 3 7 9 1
 
-The length of the longest subsequence of the given sequence = 4
+The length of the longest increasing subsequence of the given sequence = 4
 */

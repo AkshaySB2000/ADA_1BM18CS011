@@ -26,8 +26,7 @@ int cutrod(int price[], int n)
          		maximum = max(maximum,price[j]+val[i-j-1]); 
        		val[i] = maximum; 
    	} 
-  
-   	return val[n]; 
+     	return val[n]; 
 } 
 
 /*Output:
